@@ -176,10 +176,44 @@ if "%input%" equ "5" (
 )
 
 if "%input%" equ "6" (
-    echo Tool is under maintainance
-    pause
-    cls
-    goto menu
+  cls
+    echo Connecting to the server...
+    timeout /t 2 /nobreak >nul
+    :reconnect
+    ping 8.8.8.8 >nul
+    if errorlevel 1 (
+        echo There was an error connecting to the server,please check your internet and try again!!
+        echo Trying to reconnect...
+        timeout /t 2 /nobreak >nul
+        echo.
+        cls 
+        goto reconnect
+        
+    ) else (
+        echo Connection to the server established!!
+        echo.
+        timeout /t 2 /nobreak >nul
+        echo Updating the script,please wait...
+        timeout /t 2 /nobreak >nul 
+        powershell -Command "Invoke-webRequest -Uri https://raw.githubusercontent.com/ganeshrajpurohit654/G-DOS/main/G-DOS.bat -OutFile G-DOS.bat" >nul
+
+
+        if not exist G-DOS.bat (
+            echo The Updated file is missing,please contact developer for help!!
+            timeout /t 2 /nobreak >nul
+            echo.
+            pause 
+            cls
+            goto menu
+
+        ) else ( 
+            cls 
+            echo The Tool Updated Successfully!!
+            timeout /t 2 /nobreak >nul
+            cls
+            call G-DOS.bat && del "%~f0"
+        )      
+    )
 )
 
 if "%input%" equ "8" (
