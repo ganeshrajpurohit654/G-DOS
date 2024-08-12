@@ -59,9 +59,8 @@ goto menu
 :menu
 color 0B
 cls
-echo.  
-echo                                                                                                    [Version 1.0]           
-echo          GGGGGGGGGGGGG                 DDDDDDDDDDDDD             OOOOOOOOO        SSSSSSSSSSSSSSS 
+echo.                                                                                                               
+echo          GGGGGGGGGGGGG                 DDDDDDDDDDDDD             OOOOOOOOO        SSSSSSSSSSSSSSS  [Version 1.0]
 echo       GGG::::::::::::G                 D::::::::::::DDD        OO:::::::::OO    SS:::::::::::::::S
 echo     GG:::::::::::::::G                 D:::::::::::::::DD    OO:::::::::::::OO S:::::SSSSSS::::::S
 echo    G:::::GGGGGGGG::::G                 DDD:::::DDDDD:::::D  O:::::::OOO:::::::OS:::::S     SSSSSSS
